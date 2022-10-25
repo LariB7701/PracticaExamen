@@ -1,2 +1,46 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns = "http://www.w3.org/1999/xhtml">
+    <head>
+        <title>PAÍCES</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>Datos de los Paíces</h2>
+        <a th:href="@{/estado/nuevo}">Nuevo País</a>
+        <div th:if="${estados != null and !estados.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>País:</th>
+                        <th>Capital:</th>
+                        <th>Población:</th>
+                        <th>Costas:</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                    <tr th:each="estado : ${estados}">
+                        <td>[[${estado.nomEstado}]]</td>
+                        <td>[[${estado.capital}]]</td>
+                        <td>[[${estado.poblacion}]]</td>
+                        <td>[[${estado.costas}]]</td>
+                        <td>
+                            <a th:href="@{estado/actualiza/} + ${estado.idEstado}"> Actualiza </a>
+                        </td>
+                        <td>
+                            <a th:href="@{estado/elimina/} + ${estado.idEstado}"> Elimina </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div th:if="${estados == null or !estados.empty}">
+            <h3>No tenemos Paíces</h3>
+        </div>
+
+    </body>
+</html>
