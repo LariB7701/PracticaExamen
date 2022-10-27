@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns = "http://www.w3.org/1999/xhtml">
+
     <head>
         <title>PAÍCES</title>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="css/estilo1.css"> 
+            <style>
+                h2{
+                    color: #02747E;
+                }
+                table {
+                    border-collapse: collapse;
+                    width: 50%;
+
+                }
+
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #02747E;
+                    text-align: left;
+                    padding: 8px;
+
+                }
+
+                tr:nth-child(even) {
+                    background-color: #C9E9EC;
+                    color: #02747E;
+                }
+
+                a:link {
+                    color: blue;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: hotpink;
+                }
+
+            </style>
     </head>
     <body>
         <h2>Datos de los Paíces</h2>
@@ -12,7 +46,7 @@
         <div th:if="${estados != null and !estados.empty}">
             <table>
                 <thead >
-                    <tr >
+                    <tr>
                         <th>País</th>
                         <th>Capital</th>
                         <th>Población</th>

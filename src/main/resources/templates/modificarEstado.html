@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns = "http://www.w3.org/1999/xhtml">
-    
+
     <head>
         <title>Paíces</title>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="css/estilo1.css"> 
+            <style>
+                h2{
+                    color: #02747E;
+                    
+                }
+                input[type=text], select {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #02747E;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+
+                input[type=submit] {
+                    width: 6%;
+                    background-color: #02747E;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                input[type=submit]:hover {
+                    background-color: gray;
+                }
+
+                div {
+                    border-radius: 5px;
+                    background-color: #f2f2f2;
+                    padding: 20px;
+                }
+                
+                 a:link {
+                    color: blue;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: hotpink;
+                }
+            </style>
     </head>
-    
+
     <body>
         <h2>Datos de los paíces</h2>
         <a th:href="@{/}">Regresar</a>
@@ -17,34 +61,34 @@
 
               method="post"
               th:object="${estado}">
-            
+
             <!-- De manera esconcdida el atributo ID cliente tiene un valor -->
             <input type="hidden" name="idEstado" th:field="*{idEstado}"/>
 
             <fieldset>
-                <label for="estado_nom">País: </label>
+                <label for="estado_nom">País </label>
                 <!-- {nombre}= dice que este atributo esta asociado -->
                 <input type="text" name="nombre" th:field="*{estado_nom}"/>
             </fieldset>
 
             <fieldset>
-                <label for="capital">Capital: </label>
+                <label for="capital">Capital </label>
                 <input type="text" name="capital" th:field="*{capital}"/>
             </fieldset>
-            
+
             <fieldset>
                 <label for="poblacion">Número de población </label>
                 <input type="text" name="población" th:field="*{poblacion}"/>
             </fieldset>
-           
+
             <fieldset>
                 <label for="costas">Costas </label>
                 <input type="text" name="costas" th:field="*{costas}"/>
             </fieldset>
-            
+
             <hr/>
             <input type="submit" name="guardar" value="guardar"/>
-            
+
         </form>
     </body>
 </html>
