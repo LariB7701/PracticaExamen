@@ -4,18 +4,19 @@
     <head>
         <title>PAÍCES</title>
         <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="css/estilo1.css"> 
     </head>
     <body>
         <h2>Datos de los Paíces</h2>
         <a th:href="@{/estado/nuevo}">Nuevo País</a>
         <div th:if="${estados != null and !estados.empty}">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>País:</th>
-                        <th>Capital:</th>
-                        <th>Población:</th>
-                        <th>Costas:</th>
+            <table>
+                <thead >
+                    <tr >
+                        <th>País</th>
+                        <th>Capital</th>
+                        <th>Población</th>
+                        <th>Costas</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -23,7 +24,7 @@
                 <tbody>
 
                     <tr th:each="estado : ${estados}">
-                        <td>[[${estado.nomEstado}]]</td>
+                        <td>[[${estado.estado_nom}]]</td>
                         <td>[[${estado.capital}]]</td>
                         <td>[[${estado.poblacion}]]</td>
                         <td>[[${estado.costas}]]</td>

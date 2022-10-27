@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns = "http://www.w3.org/1999/xhtml">
+    
     <head>
-        <title>TODO supply a title</title>
+        <title>Paíces</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/estilo1.css"> 
     </head>
+    
     <body>
-        <div>TODO write content</div>
+        <h2>Datos de los paíces</h2>
+        <a th:href="@{/}">Regresar</a>
+
+        <hr/>
+        <form th:action="@{/estado/guardar}"
+
+              method="post"
+              th:object="${estado}">
+            
+            <!-- De manera esconcdida el atributo ID cliente tiene un valor -->
+            <input type="hidden" name="idEstado" th:field="*{idEstado}"/>
+
+            <fieldset>
+                <label for="estado_nom">País: </label>
+                <!-- {nombre}= dice que este atributo esta asociado -->
+                <input type="text" name="nombre" th:field="*{estado_nom}"/>
+            </fieldset>
+
+            <fieldset>
+                <label for="capital">Capital: </label>
+                <input type="text" name="capital" th:field="*{capital}"/>
+            </fieldset>
+            
+            <fieldset>
+                <label for="poblacion">Número de población </label>
+                <input type="text" name="población" th:field="*{poblacion}"/>
+            </fieldset>
+           
+            <fieldset>
+                <label for="costas">Costas </label>
+                <input type="text" name="costas" th:field="*{costas}"/>
+            </fieldset>
+            
+            <hr/>
+            <input type="submit" name="guardar" value="guardar"/>
+            
+        </form>
     </body>
 </html>

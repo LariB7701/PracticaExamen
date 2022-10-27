@@ -19,16 +19,15 @@ public class Estado implements Serializable {
     
 
     //Atributos
-    private String nomEstado;
+    private String estado_nom;
     private String capital;
     private int poblacion;
     private String costas;
     
 
     //Contructor
-    public Estado(Long idEstado, String nomEstado, String capital, int poblacion, String costas) {
-        this.idEstado = idEstado;
-        this.nomEstado = nomEstado;
+    public Estado(String estado_nom, String capital, int poblacion, String costas) {
+        this.estado_nom = estado_nom;
         this.capital = capital;
         this.poblacion = poblacion;
         this.costas = costas;

@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-     @Autowired
-    private EstadoService EstadoService;
+    @Autowired
+    private EstadoService estadoService;
     
       @GetMapping("/")
     public String inicio(Model model) {
         var texto = "Práctica para el examen";
         model.addAttribute("saludo", texto);
 
-        var estados = EstadoService.getEstado();
-        model.addAttribute("estado", estados);
+        var estados = estadoService.getEstados();
+        model.addAttribute("estados", estados);
 
         return "index";
     }
